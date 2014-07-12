@@ -23,6 +23,8 @@ gem 'turbolinks'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -35,4 +37,6 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'valid_attribute'
+  gem 'vcr'
+  gem 'webmock'
 end
