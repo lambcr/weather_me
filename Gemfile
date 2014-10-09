@@ -36,6 +36,9 @@ gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+end
+
+group :test do
   gem 'valid_attribute'
   gem 'vcr'
   gem 'webmock'
