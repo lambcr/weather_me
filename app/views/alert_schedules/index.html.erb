@@ -1,0 +1,27 @@
+<h2>your alerts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>zip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alert_schedules.each do |alert_schedule| %>
+      <tr>
+        <td><%= alert_schedule.name %></td>
+        <td><%= alert_schedule.location.address %></td>
+        <td><%= link_to 'Show', alert_schedule %></td>
+        <td><%= link_to 'Edit', edit_alert_schedule_path(alert_schedule) %></td>
+        <td><%= link_to 'Destroy', alert_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alert schedule', new_alert_schedule_path %>

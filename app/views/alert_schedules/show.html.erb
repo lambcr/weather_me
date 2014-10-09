@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @alert_schedule.created_by %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @alert_schedule.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @alert_schedule.location.address %>
+</p>
+
+<%= link_to 'Edit', edit_alert_schedule_path(@alert_schedule) %> |
+<%= link_to 'Back', alert_schedules_path %>
