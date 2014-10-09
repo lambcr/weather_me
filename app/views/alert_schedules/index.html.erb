@@ -15,8 +15,6 @@
         <td><%= alert_schedule.name %></td>
         <td><%= alert_schedule.location.address %></td>
         <td><%= link_to 'Show', alert_schedule %></td>
-        <td><%= link_to 'Edit', edit_alert_schedule_path(alert_schedule) %></td>
-        <td><%= link_to 'Destroy', alert_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
