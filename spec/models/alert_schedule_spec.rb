@@ -5,5 +5,4 @@ describe AlertSchedule do
 
   it { should have_valid(:location).when(Location.new(address: 'Tampa, FL')) }
   it { should_not have_valid(:location).when(nil) }
-
 end
