@@ -7,7 +7,7 @@ RSpec.describe AlertSchedulesController, type: :controller do
   end
 
   describe "GET index", :vcr do
-    let!(:alert_schedule) { AlertSchedule.create!(location: Location.create!(address: 'Saint Petersburg, FL')) }
+    let!(:alert_schedule) { AlertSchedule.create!(address: 'Saint Petersburg, FL') }
     before { get :index }
 
     it "succeeds" do
@@ -19,7 +19,7 @@ RSpec.describe AlertSchedulesController, type: :controller do
   end
 
   describe "GET show", :vcr do
-    let!(:alert_schedule) { AlertSchedule.create!(location: Location.create!(address: 'Saint Petersburg, FL')) }
+    let!(:alert_schedule) { AlertSchedule.create!(address: 'Saint Petersburg, FL') }
     before do
       get :show, {id: alert_schedule.to_param}
     end
@@ -45,7 +45,7 @@ RSpec.describe AlertSchedulesController, type: :controller do
 
   describe "POST create", :vcr do
     describe "with valid params" do
-      let(:valid_attributes) { {location: {address: 'Saint Petersburg, FL'}} }
+      let(:valid_attributes) { {address: 'Saint Petersburg, FL'} }
       before do
         post :create, {alert_schedule: valid_attributes}
       end

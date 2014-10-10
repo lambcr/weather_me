@@ -1,5 +1,6 @@
 class AlertSchedule < ActiveRecord::Base
-  belongs_to :location
+  geocoded_by :address
+  validates :address, presence: true
 
-  validates :location, presence: true
+  after_validation :geocode, if: :address_changed?
 end

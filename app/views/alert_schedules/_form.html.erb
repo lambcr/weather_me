@@ -15,12 +15,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <%= f.fields_for(:location) do |location_form| %>
-    <div class="field">
-      <%= location_form.label :address %><br>
-      <%= location_form.text_field :address %>
-    </div>
-  <% end %>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

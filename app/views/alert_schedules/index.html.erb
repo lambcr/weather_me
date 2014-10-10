@@ -13,7 +13,7 @@
     <% @alert_schedules.each do |alert_schedule| %>
       <tr>
         <td><%= alert_schedule.name %></td>
-        <td><%= alert_schedule.location.address %></td>
+        <td><%= alert_schedule.address %></td>
         <td><%= link_to 'Show', alert_schedule %></td>
       </tr>
     <% end %>
