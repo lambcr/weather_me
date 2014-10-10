@@ -13,7 +13,7 @@ class AlertSchedulesController < ApplicationController
   end
 
   def create
-    @alert_creator = CreateWeatherAlert.new(alert_schedule_params)
+    @alert_creator = CreateWeatherAlert.new(alert_schedule_params.merge(creator: current_user))
 
     if @alert_creator.execute
       redirect_to @alert_creator.alert_schedule, notice: 'Alert schedule was successfully created.'
