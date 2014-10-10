@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe AlertSchedulesController, type: :controller do
-  let(:user) { User.create!(email: 'bender@gmail.com', password: 'testtest') }
+  let(:user) { FactoryGirl.create(:user) }
   before do
     sign_in(user)
   end
