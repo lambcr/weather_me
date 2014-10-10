@@ -3,16 +3,8 @@ require 'rails_helper'
 RSpec.describe "alert_schedules/index", type: :view do
   let!(:alert_schedules) {
     [
-      AlertSchedule.new(
-        name:       'test',
-        created_by: 1,
-        address: 'Florida',
-      ),
-      AlertSchedule.new(
-        name:       'test',
-        created_by: 1,
-        address: 'Florida',
-      ),
+      FactoryGirl.build(:alert_schedule),
+      FactoryGirl.build(:alert_schedule),
     ]
   }
   before(:each) do

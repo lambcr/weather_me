@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "alert_schedules/show", type: :view do
-  let(:alert_schedule) {
-    AlertSchedule.new(
-      name:       'test',
-      created_by: 1,
-      address:    'Florida',
-    )
-  }
+  let(:alert_schedule) { FactoryGirl.build(:alert_schedule) }
   before(:each) do
     assign(:alert_schedule, alert_schedule)
     render

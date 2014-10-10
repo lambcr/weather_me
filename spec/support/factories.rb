@@ -5,4 +5,9 @@ FactoryGirl.define do
     email
     password "password"
   end
+
+  factory :alert_schedule do
+    name    'To John'
+    address 'St Petersburg, FL'
+  end
 end
