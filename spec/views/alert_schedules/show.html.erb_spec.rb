@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "alert_schedules/show", :type => :view do
+RSpec.describe "alert_schedules/show", type: :view do
   let(:location) { Location.new(address: 'Florida') }
   let(:alert_schedule) {
     AlertSchedule.new(
