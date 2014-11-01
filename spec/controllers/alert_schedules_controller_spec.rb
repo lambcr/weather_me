@@ -7,7 +7,7 @@ RSpec.describe AlertSchedulesController, type: :controller do
   end
 
   describe "GET index", :vcr do
-    let!(:alert_schedule) { FactoryGirl.create(:alert_schedule) }
+    let!(:alert_schedule) { FactoryGirl.create(:alert_schedule, creator: user) }
     before { get :index }
 
     it "succeeds" do

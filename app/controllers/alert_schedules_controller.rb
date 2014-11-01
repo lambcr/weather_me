@@ -2,7 +2,7 @@ class AlertSchedulesController < ApplicationController
   before_action :set_alert_schedule, only: [:show]
 
   def index
-    @alert_schedules = AlertSchedule.all
+    @alert_schedules = current_user.alert_schedules
   end
 
   def show
