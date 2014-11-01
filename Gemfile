@@ -24,6 +24,7 @@ gem 'turbolinks'
 gem 'spring',        group: :development
 
 gem 'geocoder'
+gem 'weather_alert', github: 'lambcr/weather_alert'
 
 # Use unicorn as the app server
 # gem 'unicorn'
