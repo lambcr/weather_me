@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "alert_schedules/index", type: :view do
+RSpec.describe "alert_schedules/index", type: :view, vcr: true do
   let!(:alert_schedules) {
     [
-      FactoryGirl.build(:alert_schedule),
-      FactoryGirl.build(:alert_schedule),
+      FactoryGirl.create(:alert_schedule),
+      FactoryGirl.create(:alert_schedule),
     ]
   }
   before(:each) do

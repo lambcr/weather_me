@@ -9,5 +9,6 @@ FactoryGirl.define do
   factory :alert_schedule do
     name    'To John'
     address 'St Petersburg, FL'
+    creator factory: :user
   end
 end
