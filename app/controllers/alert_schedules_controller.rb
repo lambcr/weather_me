@@ -22,6 +22,12 @@ class AlertSchedulesController < ApplicationController
     end
   end
 
+  def forecast
+    @forecast = ForecastPresenter.new(
+      GrabForecastForAlertSchedule.new(alert_schedule_id: params[:id]).execute
+    ).simple
+  end
+
   private
 
   def set_alert_schedule

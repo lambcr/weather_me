@@ -1,0 +1,12 @@
+<h2>Forecast</h2>
+
+<% @forecast.each do |daily_forecast| %>
+  <div class="row [radius round]">
+    <div class="large-4 columns"><%= daily_forecast.date %></div>
+    <div class="large-4 columns"><%= daily_forecast.conditions %></div>
+    <div class="large-4 columns">
+      <div><%= daily_forecast.low %></div>
+      <div><%= daily_forecast.high %></div>
+    </div>
+  </div>
+<% end %>

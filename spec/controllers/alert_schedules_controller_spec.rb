@@ -58,4 +58,34 @@ RSpec.describe AlertSchedulesController, type: :controller do
       end
     end
   end
+
+  describe "GET forecast" do
+    let(:alert_schedule_id) { 42 }
+
+    let(:simple_forecast) { [Hashie::Mash.new(conditions: 'rainy', date: Date.today, high: '100', low: '42')] }
+    let(:forecast_presenter) do
+      double(simple: simple_forecast)
+    end
+
+    before do
+      allow(GrabForecastForAlertSchedule).to receive(:new).and_return(double(execute: 'test'))
+      allow(ForecastPresenter).to receive(:new).and_return(forecast_presenter)
+      get :forecast, id: alert_schedule_id
+    end
+
+    context "with a successful forecast response" do
+      it "succeeds" do
+        expect(response).to be_success
+      end
+      it "returns the forecast" do
+        expect(assigns(:forecast)).to eq(simple_forecast)
+      end
+      it "grabs the forecast for the alert schedule" do
+        expect(GrabForecastForAlertSchedule).to have_received(:new)
+      end
+      it "presents the simple forecast" do
+        expect(forecast_presenter).to have_received(:simple)
+      end
+    end
+  end
 end
